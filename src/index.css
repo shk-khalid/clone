@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animation for detecting autofill */
+@keyframes onAutoFillStart {
+  from {/**/}
+  to {/**/}
+}
+
+@keyframes onAutoFillCancel {
+  from {/**/}
+  to {/**/}
+}
+
+/* Apply the animation only to autofilled inputs */
+input:-webkit-autofill {
+  animation-name: onAutoFillStart;
+  transition: background-color 50000s ease-in-out 0s;
+}
+
+input:not(:-webkit-autofill) {
+  animation-name: onAutoFillCancel;
+}
+
+/* Override browser autofill styles to maintain dark theme */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #111827 inset !important;
+  -webkit-text-fill-color: #e5e7eb !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Custom styles for price range slider */
+.range-thumb-left::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 3;
+  position: relative;
+}
+
+.range-thumb-right::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 3;
+  position: relative;
+}
+
+.range-thumb-left::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 3;
+  position: relative;
+}
+
+.range-thumb-right::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 3;
+  position: relative;
+}
+
+/* Make range inputs transparent */
+.range-thumb-left,
+.range-thumb-right {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  background: transparent;
+}
+
+/* Hide default track for webkit browsers */
+.range-thumb-left::-webkit-slider-runnable-track,
+.range-thumb-right::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 0;
+}
+
+.range-thumb-left::-moz-range-track,
+.range-thumb-right::-moz-range-track {
+  background: transparent;
+}
+
+/* Add hover effect */
+.range-thumb-left:hover::-webkit-slider-thumb,
+.range-thumb-right:hover::-webkit-slider-thumb,
+.range-thumb-left:hover::-moz-range-thumb,
+.range-thumb-right:hover::-moz-range-thumb {
+  background: #f9fafb;
+  border-color: #4f46e5;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+.range-thumb-left:focus::-webkit-slider-thumb,
+.range-thumb-right:focus::-webkit-slider-thumb,
+.range-thumb-left:focus::-moz-range-thumb,
+.range-thumb-right:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  outline: none;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 rgba(255, 99, 71, 0.7); }
+  50%  { box-shadow: 0 0 15px rgba(255, 99, 71, 0.7); }
+  100% { box-shadow: 0 0 0 rgba(255, 99, 71, 0); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    @apply tw-text-gray-200 tw-bg-black;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@layer components {
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 16;
+  }
+
+  .aspect-h-9 {
+    --tw-aspect-h: 9;
+  }
+
+  .aspect-w-16 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .trusted-carousel .swiper-wrapper {
+    transition-timing-function: linear;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.tw-animate-blob { /* Added the tw- prefix here */
+  animation: blob 7s infinite;
+}
+
+.mask-three-right-cuts {
+  --cutout-width: 20%; /* Adjust the width of the visible cutouts */
+  --cutout-height: 10vh; /* Height of each cutout */
+
+  background-color: rgba(0, 0, 0, 0.6); /* Fallback overlayOpacity */
+
+  -webkit-mask-image: 
+    linear-gradient(to right, black calc(100% - var(--cutout-width)), transparent calc(100% - var(--cutout-width))),
+    linear-gradient(
+      to bottom,
+      transparent calc(16.66% - var(--cutout-height) / 2),
+      black calc(16.66% - var(--cutout-height) / 2),
+      black calc(16.66% + var(--cutout-height) / 2),
+      transparent calc(16.66% + var(--cutout-height) / 2),
+
+      transparent calc(50% - var(--cutout-height) / 2),
+      black calc(50% - var(--cutout-height) / 2),
+      black calc(50% + var(--cutout-height) / 2),
+      transparent calc(50% + var(--cutout-height) / 2),
+
+      transparent calc(83.33% - var(--cutout-height) / 2),
+      black calc(83.33% - var(--cutout-height) / 2),
+      black calc(83.33% + var(--cutout-height) / 2),
+      transparent calc(83.33% + var(--cutout-height) / 2)
+    );
+
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  pointer-events: none;
+}
+
+
+/* Widget css */
+
+#pdp-widget-root.highlight {
+  animation: highlight-glow 1.5s ease-out;
+}
+
+@keyframes highlight-glow {
+  0%   { box-shadow: 0 0 0px rgba(255, 200, 0, 0.0); }
+  20%  { box-shadow: 0 0 8px rgba(255, 200, 0, 0.8); }
+  100% { box-shadow: 0 0 0px rgba(255, 200, 0, 0.0); }
+}
+
+/* hide mobile scrollbar */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+/* size & base color */
+.custom-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #4F4F4F;
+  opacity: 1;
+}
+/* active bullet color */
+.custom-pagination .swiper-pagination-bullet-active {
+  background: #00C5FB;
+}
