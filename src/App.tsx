@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TestimonialsSection from "@/components/TestmonialsSection";
 import FeaturesSection from "./components/FeaturesSection";
+import ConnectionsSection from "./components/ConnectionsSection";
 
 function App() {
   useEffect(() => {
@@ -66,11 +67,11 @@ function App() {
           <FeaturesSection />
         </section>
 
-        {/* <section className="tw-mt-12 tw-mb-12 sm:tw-mt-16 sm:tw-mb-16 md:tw-mt-24 md:tw-mb-24">
-          <Automation />
+        <section className="tw-mt-12 tw-mb-12 sm:tw-mt-16 sm:tw-mb-16 md:tw-mt-24 md:tw-mb-24">
+          <ConnectionsSection />
         </section>
 
-        <section className="tw-mt-12 tw-mb-12 sm:tw-mt-16 sm:tw-mb-16 md:tw-mt-24 md:tw-mb-24">
+        {/* <section className="tw-mt-12 tw-mb-12 sm:tw-mt-16 sm:tw-mb-16 md:tw-mt-24 md:tw-mb-24">
           <SelfService />
         </section>
 
