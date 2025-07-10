@@ -111,7 +111,7 @@ const FeaturesSection: React.FC = () => {
               Enjoy locally-based customer support
             </h3>
           </div>
-          <div className="tw-hidden md:tw-block tw-absolute tw-bottom-8 tw:right-8">
+          <div className="tw-hidden md:tw-block tw-absolute tw-bottom-8 tw-right-8">
             <div className="tw-relative tw-rounded-3xl tw-bg-white tw-shadow-lg tw-p-6 tw-max-w-md">
               <CTACover className="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-fill tw-z-0" />
               <div className="tw-relative tw-flex tw-justify-between tw-items-start tw-z-10">

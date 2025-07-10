@@ -47,10 +47,9 @@ const sections = [
 const Footer: React.FC = () => {
   return (
     <footer className="tw-bg-teal-800 tw-text-white">
-      {/* Top: logo + availability button */}
       <div className="tw-max-w-7xl tw-mx-auto tw-px-6 tw-py-10 tw-flex tw-flex-col md:tw-flex-row tw-items-center md:tw-justify-between tw-space-y-6 md:tw-space-y-0">
         <div className="tw-flex tw-flex-col tw-items-center md:tw-items-start tw-space-y-2">
-          <Logo className="tw-h-10 md:tw-h-12 lg:tw-h-14" />
+          <Logo className="tw-h-6 md:tw-h-12 lg:tw-h-14 tw-w-auto" />
           <span className="tw-text-sm md:tw-text-2xl tw-tracking-wide tw-font-light tw-text-gray-200">
             Flying Bull Internet Company, LLC
           </span>

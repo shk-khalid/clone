@@ -190,12 +190,18 @@ const HeroSection: React.FC = () => {
                 </div>
 
                 <div className="tw-flex tw-justify-center tw-mb-16">
-                    <div className="tw-flex tw-items-center tw-bg-white tw-border-2 tw-border-teal-600 tw-rounded-full tw-overflow-hidden tw-w-full tw-max-w-md">
-                        <div className="tw-flex tw-items-center tw-justify-center tw-px-4">
-                            <MapPin className="tw-w-5 tw-h-5 tw-text-teal-600" />
+                    <div className="tw-flex tw-flex-col lg:tw-flex-row tw-items-center tw-w-full tw-max-w-md tw-bg-white tw-rounded-3xl lg:tw-rounded-full tw-p-4 lg:tw-px-2 lg:tw-py-0 lg:tw-border-2 lg:tw-border-teal-600">
+                        <div className="tw-flex tw-items-center tw-w-full">
+                            <div className="tw-flex tw-items-center tw-px-2 lg:tw-px-4">
+                                <MapPin className="tw-w-5 tw-h-5 tw-text-teal-600" />
+                            </div>
+                            <input
+                                type="text"
+                                placeholder="Search for your address"
+                                className="tw-flex-1 tw-w-full tw-py-3 tw-px-2 tw-bg-transparent tw-text-gray-700 tw-placeholder-gray-700 tw-outline-none"
+                            />
                         </div>
-                        <input type="text" placeholder="Search for your address" className="tw-flex-1 tw-py-3 tw-pr-4 tw-bg-transparent tw-text-gray-700 tw-placeholder-gray-700 tw-outline-none" />
-                        <button className="tw-bg-teal-600 tw-text-white tw-px-6 tw-py-3 tw-m-1 tw-rounded-full tw-font-semibold">
+                        <button className="tw-whitespace-nowrap tw-w-full lg:tw-w-auto tw-bg-teal-600 tw-text-white tw-py-3 tw-px-6 tw-rounded-full tw-font-semibold tw-hover:tw-bg-teal-700 tw-transition-colors tw-mt-4 lg:tw-m-3 tw-text-sm lg:tw-text-base">
                             Search Now
                         </button>
                     </div>
@@ -236,9 +242,9 @@ const HeroSection: React.FC = () => {
                 </div>
 
                 <div className="tw-mt-12 tw-flex tw-justify-center">
-                    <div className="tw-border tw-border-gray-300 tw-rounded-2xl tw-px-6 tw-py-4 tw-flex tw-flex-wrap tw-items-center tw-text-sm tw-text-gray-700">
+                    <div className="tw-border-2 tw-border-gray-400 tw-rounded-2xl tw-px-6 tw-space-y-3 md:tw-space-y-0 tw-py-4 tw-flex tw-flex-col sm:tw-flex-row tw-items-center tw-text-sm tw-text-gray-700">
 
-                        <div className="tw-flex tw-items-center tw-gap-2 tw-mr-8 sm:tw-mr-12 lg:tw-mr-16">
+                        <div className="tw-flex tw-items-center tw-gap-2 tw-mr-8 tw-mb-2 md:tw-mb-0 sm:tw-mr-12 lg:tw-mr-16">
                             <span>*All plans include</span>
                         </div>
                         {[
