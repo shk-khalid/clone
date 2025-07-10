@@ -6,7 +6,8 @@ import TestimonialsSection from "@/components/TestmonialsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ConnectionsSection from "@/components/ConnectionsSection";
 
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
+import CTASection from "./components/CTASection";
 
 function App() {
   useEffect(() => {
@@ -73,21 +74,9 @@ function App() {
           <ConnectionsSection />
         </section>
 
-        {/* <section className="tw-mt-12 tw-mb-12 sm:tw-mt-16 sm:tw-mb-16 md:tw-mt-24 md:tw-mb-24">
-          <SelfService />
-        </section>
-
         <section className="tw-mt-12 tw-mb-12 sm:tw-mt-16 sm:tw-mb-16 md:tw-mt-24 md:tw-mb-24">
-          <RiskReward />
+          <CTASection />
         </section>
-
-        <section className="tw-mt-12 tw-mb-12 sm:tw-mt-16 sm:tw-mb-16 md:tw-mt-24 md:tw-mb-24">
-          <SuccessStudy />
-        </section>
-
-        <section className="tw-mt-12 tw-mb-12 sm:tw-mt-16 sm:tw-mb-16 md:tw-mt-24 md:tw-mb-24">
-          <GettingStarted />
-        </section> */}
 
         <Footer />
       </main>
