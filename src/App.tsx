@@ -3,8 +3,10 @@ import Lenis from "lenis";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TestimonialsSection from "@/components/TestmonialsSection";
-import FeaturesSection from "./components/FeaturesSection";
-import ConnectionsSection from "./components/ConnectionsSection";
+import FeaturesSection from "@/components/FeaturesSection";
+import ConnectionsSection from "@/components/ConnectionsSection";
+
+import Footer from "@/components/footer";
 
 function App() {
   useEffect(() => {
@@ -85,9 +87,9 @@ function App() {
 
         <section className="tw-mt-12 tw-mb-12 sm:tw-mt-16 sm:tw-mb-16 md:tw-mt-24 md:tw-mb-24">
           <GettingStarted />
-        </section>
+        </section> */}
 
-        <Footer />*/}
+        <Footer />
       </main>
     </div>
   )

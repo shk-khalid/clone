@@ -7,6 +7,7 @@ import BottomTick from '@/assets/bottomTick.svg?react';
 import Connection1 from '@/assets/connection1.png';
 import Connection2 from '@/assets/connection2.png';
 import Connection3 from '@/assets/connection3.png';
+import { Star } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,7 @@ const ConnectionsSection = () => {
   const image1Ref = useRef<HTMLDivElement>(null);
   const image2Ref = useRef<HTMLDivElement>(null);
   const image3Ref = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -44,22 +46,55 @@ const ConnectionsSection = () => {
       );
     });
 
+    if (statsRef.current) {
+      gsap.fromTo(statsRef.current,
+        {
+          y: 100,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: statsRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+
     return () => ScrollTrigger.getAll().forEach(t => t.kill());
   }, []);
+
+  const stats = [
+    {
+      value: "100x",
+      description: "Faster speeds compared to the average U.S. internet provider."
+    },
+    {
+      value: "99.9%",
+      description: "Network uptime for seamless streaming, gaming, and browsing."
+    },
+    {
+      value: "4.8",
+      icon: <Star className="tw-w-8 tw-h-8 tw-fill-current tw-text-teal-500" />,
+      description: "High customer satisfaction score. Internet that delivers— trusted by your neighbors."
+    }
+  ];
 
   return (
     <section
       ref={sectionRef}
       className="tw-relative tw-py-20 tw-bg-gray-50 tw-overflow-hidden"
     >
-      {/* Rainbow SVG Background */}
-      <div className="tw-absolute tw-inset-0 tw-flex tw-items-center tw-justify-center">
-        <RainbowCover />
-      </div>
-
-      {/* Content Container */}
       <div className="tw-relative tw-z-10 tw-max-w-7xl tw-mx-auto tw-px-6">
-
+        <div className="tw-absolute tw-inset-0 tw-flex tw-items-center tw-justify-center">
+          <RainbowCover />
+        </div>
         <div className="tw-relative tw-h-[500px] lg:tw-h-[800px] tw-overflow-hidden">
           <div className="tw-absolute tw-top-1/4 tw-left-[20%] tw-transform-none tw-text-center tw-px-4 tw-z-20">
             <h2 className="tw-text-4xl lg:tw-text-6xl tw-font-medium tw-text-gray-900 tw-mb-4">
@@ -123,6 +158,33 @@ const ConnectionsSection = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div
+      ref={statsRef}
+      className="tw-bg-teal-50 tw-rounded-3xl tw-p-8 lg:tw-p-12"
+    >
+      <div className="tw-flex tw-flex-col tw-space-y-8">
+        {stats.map((stat, idx) => (
+          <div
+            key={idx}
+            className="tw-flex tw-items-center tw-justify-center tw-text-left tw-space-x-6"
+          >
+            
+            <div className="tw-flex tw-items-center tw-space-x-2 tw-flex-shrink-0">
+              <span className="tw-text-4xl lg:tw-text-6xl tw-font-medium tw-text-teal-500">
+                {stat.value}
+              </span>
+              {stat.icon && stat.icon}
+            </div>
+
+            {/* Description */}
+            <p className="tw-text-gray-600 tw-text-xs lg:tw-text-sm tw-leading-relaxed tw-max-w-[200px]">
+              {stat.description}
+            </p>
+          </div>
+        ))}
+      </div>
       </div>
     </section>
   );
